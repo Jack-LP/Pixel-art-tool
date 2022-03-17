@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./scss/main.css">
     <script src="./script.js" defer></script>
     <title>Pixel art</title>
@@ -22,14 +23,14 @@
                 <div class="canvas"></div>
             </div>
             <div class="controlSection">
-                <div class="colorDisplay">#Color</div>
-                <button class="colorBtn">Color mode</button>
-                <button class="rainbowBtn">Rainbow</button>
-                <button class="eraserBtn">Eraser</button>
-                <button class="clearBtn">Clear</button>
-                <div class="slideContainer">
-                    <input class="slider" type="range" min="0" max="96" value="16" step="8" oninput="this.nextElementSibling.value = this.value">
-                    <output class="hidden">0</output>
+                <div class="colorDisplay" id="colorDisplayBg"><input type="color" id="colorPicker" value="#2d2d2d"><span id="colorDisplay">#2d2d2d</span></div>
+                <button class="colorBtn controlBtn">Color mode</button>
+                <button class="rainbowBtn controlBtn">Rainbow</button>
+                <button class="eraserBtn controlBtn">Eraser</button>
+                <button class="clearBtn controlBtn">Clear</button>
+                <div class="inputContainer">
+                    <input autocomplete="off" type="text" placeholder="Size" value="16" onchange="changeSize(this.value)">
+                    <button><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>

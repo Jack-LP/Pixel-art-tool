@@ -54,7 +54,7 @@ function changeSize(input){
     if (input >=2 && input <=40){
         populateCanvas(input);
     } else {
-        console.log("error");
+        alert("Please enter a value between 2 & 40");
     }
 }
 

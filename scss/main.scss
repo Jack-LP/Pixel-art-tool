@@ -1,0 +1,173 @@
+@import "variables";
+@import "mixins";
+
+*, ::before, ::after{
+    @include body-reset;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: $darkGrey;
+    color: $white;
+    font-family: $bodyFont;
+    font-size: $buttonText;
+    height: 100vh;
+}
+
+.container{
+    width: 62%;
+    margin: 0 auto;
+}
+
+.hidden{
+    color: transparent;
+}
+
+nav{
+    padding: 2.5rem 0;
+}
+
+.mainSection{
+    .container{
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+        grid-template-areas: 
+        "canvas controls";
+        .canvasSection{
+            grid-area: canvas;
+            .canvas{
+                border: .5rem solid $white;
+                width: 74rem;
+                height: 74rem;
+            }
+        }
+        .controlSection{
+            grid-area: controls;
+            display: flex;
+            gap: 5.8rem;
+            flex-direction: column;
+            align-items: center;
+            .colorDisplay{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                height: 15rem;
+                width: 15rem;
+                border: .5rem solid $white;
+                border-radius: 2.5rem;
+                font-size: $colorCodeText;
+            }
+            button{
+                @include button;
+            }
+            .slideContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: -2rem;
+                input{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1800px) {
+    .container{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 1590px) {
+    .container{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1390px) {
+    .container{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1235px) {
+    .container{
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 1170px) {
+    nav{
+        .container{
+            display: flex;
+            justify-content: center;
+            img{
+                width: auto;
+                height: 7rem;
+            }
+        }
+    }
+    .container{
+        width: 90%;
+    }
+    .mainSection{
+        .container{
+            grid-template-columns: 100%;
+            grid-template-rows: 35rem 45rem;
+            grid-template-areas:
+            "canvas"
+            "controls";
+            .canvasSection{
+                display: flex;
+                justify-content: center;
+                .canvas{
+                    border: .5rem solid $white;
+                    width: 30rem;
+                    height: 30rem;
+                }
+            }
+            .controlSection{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 2fr 1fr 1fr 1fr;
+                row-gap: 3rem;
+                grid-template-areas:
+                "colorDisplay colorDisplay"
+                "colorBtn rainbowBtn"
+                "eraserBtn clearBtn"
+                "slider slider";
+                button{
+                    width: 14rem;
+                    font-size: $buttonTextMobile;
+                }
+                .colorDisplay{
+                    grid-area: colorDisplay;
+                    justify-self: center;
+                }
+                .colorBtn{
+                    grid-area: colorBtn;
+                    justify-self: flex-end;
+                }
+                .rainbowBtn{
+                    grid-area: rainbowBtn;
+                }
+                .eraserBtn{
+                    grid-area: eraserBtn;
+                    justify-self: flex-end;
+                }
+                .clearBtn{
+                    grid-area: clearBtn;
+                }
+                .slideContainer{
+                    grid-area: slider;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./scss/main.css">
+    <script src="./script.js" defer></script>
+    <title>Pixel art</title>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <img src="./img/logo.png" alt="Pixel Art">
+        </div>
+    </nav>
+
+    <section class="mainSection">
+        <div class="container">
+            <div class="canvasSection">
+                <div class="canvas"></div>
+            </div>
+            <div class="controlSection">
+                <div class="colorDisplay">#Color</div>
+                <button class="colorBtn">Color mode</button>
+                <button class="rainbowBtn">Rainbow</button>
+                <button class="eraserBtn">Eraser</button>
+                <button class="clearBtn">Clear</button>
+                <div class="slideContainer">
+                    <input class="slider" type="range" min="0" max="96" value="16" step="8" oninput="this.nextElementSibling.value = this.value">
+                    <output class="hidden">0</output>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
